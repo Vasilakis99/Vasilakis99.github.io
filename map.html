@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recruiter Map — Konstantinos Vasilopoulos</title>
+  <meta name="description" content="A step-by-step guide for recruiters to get to know Konstantinos Vasilopoulos as a Data Analyst candidate." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:  #0f1e35;
+      --navy2: #1a375c;
+      --blue:  #2563eb;
+      --blue2: #1d4ed8;
+      --light: #f1f5f9;
+      --white: #ffffff;
+      --text:  #1e293b;
+      --muted: #64748b;
+      --border:#e2e8f0;
+      --green: #16a34a;
+      --amber: #d97706;
+      --purple:#7c3aed;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── TOP BAR ───────────────────────────────────────────── */
+    .topbar {
+      background: var(--navy);
+      padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .topbar-logo { color: #fff; font-weight: 700; font-size: .95rem; }
+    .topbar-logo span { color: var(--blue); }
+    .topbar-back {
+      color: rgba(255,255,255,.6); font-size: .83rem;
+      display: flex; align-items: center; gap: 6px;
+      transition: color .2s;
+    }
+    .topbar-back:hover { color: #fff; }
+
+    /* ── HERO ──────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+      padding: 60px 24px 52px;
+      text-align: center;
+    }
+    .hero-tag {
+      display: inline-block; font-size: .72rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      background: rgba(37,99,235,.2); border: 1px solid rgba(37,99,235,.4);
+      color: #93c5fd; padding: 5px 14px; border-radius: 99px; margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700;
+      color: #fff; margin-bottom: 10px; letter-spacing: -.3px;
+    }
+    .hero h1 span { color: #93c5fd; }
+    .hero-sub {
+      color: rgba(255,255,255,.6); font-size: 1rem; max-width: 520px;
+      margin: 0 auto 32px;
+    }
+    .hero-contact {
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 12px;
+    }
+    .contact-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.85); padding: 8px 16px; border-radius: 99px;
+      font-size: .83rem; font-weight: 500;
+      transition: background .2s, border-color .2s;
+    }
+    .contact-pill:hover { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.25); }
+
+    /* ── INTRO CARD ────────────────────────────────────────── */
+    .intro-wrap { max-width: 780px; margin: -24px auto 0; padding: 0 24px 0; position: relative; z-index: 2; }
+    .intro-card {
+      background: var(--white); border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.08);
+      display: flex; gap: 20px; align-items: flex-start;
+    }
+    .intro-icon { font-size: 2rem; flex-shrink: 0; margin-top: 2px; }
+    .intro-title { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .intro-text  { font-size: .9rem; color: var(--muted); line-height: 1.7; }
+
+    /* ── MAIN CONTENT ──────────────────────────────────────── */
+    .main { max-width: 780px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    /* section label */
+    .map-label {
+      font-size: .72rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--blue); margin-bottom: 20px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .map-label::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* ── STEP CARDS ────────────────────────────────────────── */
+    .step {
+      position: relative;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 28px 28px 88px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.04);
+      transition: box-shadow .25s, border-color .25s, transform .25s;
+    }
+    .step:hover { box-shadow: 0 6px 28px rgba(0,0,0,.1); border-color: #bfdbfe; transform: translateY(-2px); }
+    .step-num {
+      position: absolute; left: 24px; top: 28px;
+      width: 44px; height: 44px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; font-weight: 800; flex-shrink: 0;
+    }
+    .step-num--blue   { background: #eff6ff; color: var(--blue); }
+    .step-num--green  { background: #f0fdf4; color: var(--green); }
+    .step-num--purple { background: #f5f3ff; color: var(--purple); }
+    .step-num--amber  { background: #fffbeb; color: var(--amber); }
+    .step-num--navy   { background: #f0f4ff; color: var(--navy2); }
+
+    .step-header {
+      display: flex; align-items: flex-start;
+      justify-content: space-between; gap: 16px; margin-bottom: 10px;
+    }
+    .step-title { font-size: 1.05rem; font-weight: 700; color: var(--navy); }
+    .step-tag {
+      font-size: .68rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; padding: 4px 10px; border-radius: 99px;
+      white-space: nowrap; flex-shrink: 0;
+    }
+    .tag-start   { background: #dcfce7; color: #166534; }
+    .tag-deep    { background: #eff6ff; color: var(--blue2); }
+    .tag-proof   { background: #f5f3ff; color: var(--purple); }
+    .tag-context { background: #fffbeb; color: var(--amber); }
+    .tag-connect { background: #fce7f3; color: #9d174d; }
+
+    .step-desc { font-size: .9rem; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
+
+    .step-what {
+      background: var(--light); border-radius: 10px; padding: 14px 16px;
+      margin-bottom: 16px;
+    }
+    .step-what-title {
+      font-size: .72rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+    }
+    .step-what ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+    .step-what li {
+      font-size: .87rem; color: var(--text);
+      display: flex; align-items: flex-start; gap: 8px;
+    }
+    .step-what li::before { content: '→'; color: var(--blue); font-weight: 600; flex-shrink: 0; }
+
+    .step-links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .step-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 9px 18px; border-radius: 8px; font-size: .83rem; font-weight: 600;
+      transition: all .2s;
+    }
+    .step-link--primary { background: var(--blue); color: #fff; }
+    .step-link--primary:hover { background: var(--blue2); transform: translateY(-1px); }
+    .step-link--outline { background: transparent; border: 1.5px solid var(--border); color: var(--navy2); }
+    .step-link--outline:hover { border-color: var(--blue); color: var(--blue); }
+
+    /* ── CONNECTOR ─────────────────────────────────────────── */
+    .connector {
+      display: flex; justify-content: center; align-items: center;
+      height: 32px; margin: -4px 0;
+    }
+    .connector::before {
+      content: '↓';
+      font-size: 1.3rem; color: var(--blue); font-weight: 700;
+      opacity: .5;
+    }
+
+    /* ── PROJECT GRID ──────────────────────────────────────── */
+    .projects-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+      margin-top: 16px;
+    }
+    .proj-card {
+      border: 1.5px solid var(--border); border-radius: 10px;
+      padding: 14px 16px; background: var(--white);
+      transition: border-color .2s, box-shadow .2s;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .proj-card:hover { border-color: var(--blue); box-shadow: 0 4px 16px rgba(37,99,235,.1); }
+    .proj-card-top { display: flex; align-items: center; gap: 8px; }
+    .proj-emoji { font-size: 1.2rem; }
+    .proj-name { font-size: .88rem; font-weight: 700; color: var(--navy); }
+    .proj-badge {
+      font-size: .65rem; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; padding: 2px 8px; border-radius: 99px;
+      margin-left: auto;
+    }
+    .badge-sql    { background: #dcfce7; color: #166534; }
+    .badge-thesis { background: #fef3c7; color: #92400e; }
+    .badge-dash   { background: #ede9fe; color: #5b21b6; }
+    .badge-auto   { background: #fce7f3; color: #9d174d; }
+    .proj-metric {
+      font-size: .8rem; font-weight: 600; color: var(--blue2);
+      background: #eff6ff; border-radius: 6px; padding: 5px 10px;
+    }
+    .proj-link {
+      font-size: .78rem; font-weight: 600; color: var(--blue);
+      display: inline-flex; align-items: center; gap: 4px; margin-top: 2px;
+    }
+    .proj-link:hover { text-decoration: underline; }
+
+    /* ── SUMMARY STRIP ─────────────────────────────────────── */
+    .summary {
+      background: var(--navy); border-radius: 16px;
+      padding: 32px; margin-top: 40px;
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;
+    }
+    .sum-item { text-align: center; }
+    .sum-num { font-size: 1.8rem; font-weight: 700; color: #fff; }
+    .sum-label { font-size: .78rem; color: rgba(255,255,255,.5); margin-top: 2px; }
+
+    /* ── FOOTER ────────────────────────────────────────────── */
+    footer {
+      text-align: center; padding: 24px;
+      font-size: .8rem; color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      .intro-card { flex-direction: column; gap: 12px; padding: 20px; }
+      .step { padding: 20px 20px 20px 72px; }
+      .step-num { left: 16px; top: 20px; width: 38px; height: 38px; font-size: 1rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .summary { grid-template-columns: 1fr; }
+      .step-header { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-logo">KV<span>.</span></div>
+  <a href="https://vasilakis99.github.io" class="topbar-back">← Back to portfolio</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">📍 Recruiter Map</div>
+  <h1>Get to know <span>Konstantinos</span><br>as a candidate</h1>
+  <p class="hero-sub">A step-by-step guide with links, explanations, and what to look for — so you can evaluate him in under 10 minutes.</p>
+  <div class="hero-contact">
+    <a href="mailto:vasilop99kon@gmail.com" class="contact-pill">✉️ vasilop99kon@gmail.com</a>
+    <a href="https://www.linkedin.com/in/vasilopoulosk/" target="_blank" class="contact-pill">💼 LinkedIn</a>
+    <span class="contact-pill">📍 Utrecht, Netherlands</span>
+    <span class="contact-pill">📞 +31 6 23 03 81 39</span>
+  </div>
+</div>
+
+<!-- INTRO CARD -->
+<div class="intro-wrap">
+  <div class="intro-card">
+    <div class="intro-icon">🗺️</div>
+    <div>
+      <div class="intro-title">How to use this page</div>
+      <div class="intro-text">
+        Follow the steps below in order — each one builds on the last. Step 1 gives you the overview. Step 2 shows the work in depth. Steps 3–5 give you context, proof of execution, and a way to reach out. Every link opens in the right place. Estimated time: <strong>8–10 minutes</strong>.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <div class="map-label">The journey</div>
+
+  <!-- STEP 1 — CV -->
+  <div class="step">
+    <div class="step-num step-num--blue">📄</div>
+    <div class="step-header">
+      <div class="step-title">Step 1 — Start with the CV</div>
+      <span class="step-tag tag-start">Start here</span>
+    </div>
+    <p class="step-desc">
+      The CV is ATS-optimised and single-column — no graphics, no columns, just clean structured information. Read the <strong>Professional Summary</strong> first (5 sentences), then scan the <strong>Projects section</strong> — it's the part most CVs are missing.
+    </p>
+    <div class="step-what">
+      <div class="step-what-title">What you'll find</div>
+      <ul>
+        <li>3+ years across FP&A (Carrier BENELUX), e-commerce (Orange Sellers), and consulting (FactX)</li>
+        <li>Current role: Data Analyst at Shimano, Eindhoven — SAP S/4HANA migration, Power BI, spend analysis</li>
+        <li>MSc Applied Data Science, Utrecht University (2025)</li>
+        <li>4 projects with real business metrics — not just descriptions</li>
+        <li>Full tech stack: Python, SQL, Power BI, Tableau, Excel, Pandas, scikit-learn, HuggingFace</li>
+      </ul>
+    </div>
+    <div class="step-links">
+      <a href="https://vasilakis99.github.io" class="step-link step-link--primary">🌐 View portfolio website</a>
+      <a href="https://www.linkedin.com/in/vasilopoulosk/" target="_blank" class="step-link step-link--outline">View LinkedIn profile →</a>
+    </div>
+  </div>
+
+  <div class="connector"></div>
+
+  <!-- STEP 2 — WEBSITE -->
+  <div class="step">
+    <div class="step-num step-num--blue">🌐</div>
+    <div class="step-header">
+      <div class="step-title">Step 2 — Explore the portfolio website</div>
+      <span class="step-tag tag-deep">Full picture</span>
+    </div>
+    <p class="step-desc">
+      The website is the clearest single view of who Konstantinos is as a candidate. It covers his background, all 7 projects with business context, full skill set, and contact details. Takes about 3 minutes to scroll through.
+    </p>
+    <div class="step-what">
+      <div class="step-what-title">What to pay attention to</div>
+      <ul>
+        <li><strong>Hero section</strong> — title, subtitle, and a live SQL code snippet showing his actual work style</li>
+        <li><strong>About section</strong> — concise bio targeting DA roles, with highlights on education, location, and languages</li>
+        <li><strong>Projects section</strong> — each card has a blue "💡 Recommendation" box with a business outcome, not just a description</li>
+        <li><strong>Skills section</strong> — 6 categories, 30+ tools, covering the full data workflow end-to-end</li>
+      </ul>
+    </div>
+    <div class="step-links">
+      <a href="https://vasilakis99.github.io" target="_blank" class="step-link step-link--primary">Open portfolio →</a>
+      <a href="https://vasilakis99.github.io/#projects" target="_blank" class="step-link step-link--outline">Jump to projects →</a>
+      <a href="https://vasilakis99.github.io/#skills" target="_blank" class="step-link step-link--outline">Jump to skills →</a>
+    </div>
+  </div>
+
+  <div class="connector"></div>
+
+  <!-- STEP 3 — PROJECTS -->
+  <div class="step">
+    <div class="step-num step-num--purple">💻</div>
+    <div class="step-header">
+      <div class="step-title">Step 3 — Dig into the projects</div>
+      <span class="step-tag tag-proof">Proof of work</span>
+    </div>
+    <p class="step-desc">
+      This is where you see actual execution. Each repo has a README written as a business document — problem first, methodology in plain English, visual results, and a recommendation with numbers. The code is clean and runs. Pick any one and open it.
+    </p>
+
+    <div class="projects-grid">
+
+      <a href="https://github.com/Vasilakis99/ecommerce-cart-abandonment" target="_blank" class="proj-card">
+        <div class="proj-card-top">
+          <span class="proj-emoji">🛒</span>
+          <span class="proj-name">Cart Abandonment Analysis</span>
+          <span class="proj-badge badge-sql">SQL + Python</span>
+        </div>
+        <div class="proj-metric">💡 $370K projected annual recovery</div>
+        <div style="font-size:.8rem;color:var(--muted)">100K transactions · SQLite · 4 SQL queries · 4 charts · business recommendation</div>
+        <span class="proj-link">Open on GitHub →</span>
+      </a>
+
+      <a href="https://github.com/Vasilakis99/Sports_and_Memory" target="_blank" class="proj-card">
+        <div class="proj-card-top">
+          <span class="proj-emoji">🧠</span>
+          <span class="proj-name">ML for Dementia Care</span>
+          <span class="proj-badge badge-thesis">MSc Thesis</span>
+        </div>
+        <div class="proj-metric">💡 LLM encoders beat multimodal fusion</div>
+        <div style="font-size:.8rem;color:var(--muted)">10+ ML models · HuggingFace · scikit-learn · Utrecht University × Sports & Memory</div>
+        <span class="proj-link">Open on GitHub →</span>
+      </a>
+
+      <a href="https://github.com/Vasilakis99/sales-interactive-dashboard" target="_blank" class="proj-card">
+        <div class="proj-card-top">
+          <span class="proj-emoji">📊</span>
+          <span class="proj-name">Regional Sales Dashboard</span>
+          <span class="proj-badge badge-dash">Streamlit</span>
+        </div>
+        <div class="proj-metric">💡 Non-technical stakeholder ready</div>
+        <div style="font-size:.8rem;color:var(--muted)">Streamlit · 6 dynamic charts · KPI cards · filter sidebar · CSV export</div>
+        <span class="proj-link">Open on GitHub →</span>
+      </a>
+
+      <a href="https://github.com/Vasilakis99/sales-pipeline-automation" target="_blank" class="proj-card">
+        <div class="proj-card-top">
+          <span class="proj-emoji">⚙️</span>
+          <span class="proj-name">Sales Pipeline Automation</span>
+          <span class="proj-badge badge-auto">ETL</span>
+        </div>
+        <div class="proj-metric">💡 4+ hours → under 5 seconds</div>
+        <div style="font-size:.8rem;color:var(--muted)">Python · Pandas · auto anomaly detection · 3 regional CSVs merged automatically</div>
+        <span class="proj-link">Open on GitHub →</span>
+      </a>
+
+    </div>
+
+    <div style="margin-top:16px;">
+      <a href="https://github.com/Vasilakis99" target="_blank" class="step-link step-link--outline">See all 8 repos on GitHub →</a>
+    </div>
+  </div>
+
+  <div class="connector"></div>
+
+  <!-- STEP 4 — GITHUB PROFILE -->
+  <div class="step">
+    <div class="step-num step-num--amber">🐙</div>
+    <div class="step-header">
+      <div class="step-title">Step 4 — Check the GitHub profile</div>
+      <span class="step-tag tag-context">Consistency check</span>
+    </div>
+    <p class="step-desc">
+      The GitHub profile gives you a sense of volume, consistency, and depth. 8 public repos, all with professional READMEs framed around business problems. The pinned repos are the best 6 — ordered by impact.
+    </p>
+    <div class="step-what">
+      <div class="step-what-title">What to check</div>
+      <ul>
+        <li><strong>Pinned repos</strong> — the 6 most relevant projects are front and centre</li>
+        <li><strong>README quality</strong> — every repo starts with a business problem, not "this project does X"</li>
+        <li><strong>Variety</strong> — SQL, Python, NLP, ML, ETL, dashboards — he works across the full stack</li>
+        <li><strong>Secondary repos</strong> — Biden/Trump NLP, Film Genre EDA, Movie Revenue Prediction show breadth</li>
+      </ul>
+    </div>
+    <div class="step-links">
+      <a href="https://github.com/Vasilakis99" target="_blank" class="step-link step-link--primary">Open GitHub profile →</a>
+    </div>
+  </div>
+
+  <div class="connector"></div>
+
+  <!-- STEP 5 — LINKEDIN -->
+  <div class="step">
+    <div class="step-num step-num--navy">💼</div>
+    <div class="step-header">
+      <div class="step-title">Step 5 — Verify on LinkedIn</div>
+      <span class="step-tag tag-connect">Connect</span>
+    </div>
+    <p class="step-desc">
+      LinkedIn gives you the full employment timeline, endorsements, and a second touchpoint to reach out. The profile matches the CV exactly — same companies, same dates, same story.
+    </p>
+    <div class="step-what">
+      <div class="step-what-title">What you'll find</div>
+      <ul>
+        <li>Current: Data Analyst at Shimano (Aug 2025–present)</li>
+        <li>Previous: FactX (consulting) · Orange Sellers · Carrier BENELUX (FP&A) · SoftBiz</li>
+        <li>Education: MSc Applied Data Science (Utrecht) · BSc Applied Mathematics (Crete)</li>
+        <li>Languages: English (IELTS) · German (B2 Goethe) · Dutch · Greek (native)</li>
+      </ul>
+    </div>
+    <div class="step-links">
+      <a href="https://www.linkedin.com/in/vasilopoulosk/" target="_blank" class="step-link step-link--primary">Open LinkedIn →</a>
+      <a href="mailto:vasilop99kon@gmail.com" class="step-link step-link--outline">✉️ Email directly</a>
+    </div>
+  </div>
+
+  <!-- SUMMARY STRIP -->
+  <div class="summary">
+    <div class="sum-item">
+      <div class="sum-num">3+</div>
+      <div class="sum-label">Years of experience</div>
+    </div>
+    <div class="sum-item">
+      <div class="sum-num">8</div>
+      <div class="sum-label">Public GitHub projects</div>
+    </div>
+    <div class="sum-item">
+      <div class="sum-num">MSc</div>
+      <div class="sum-label">Applied Data Science, Utrecht</div>
+    </div>
+  </div>
+
+  <!-- READY TO TALK -->
+  <div style="text-align:center; margin-top:40px;">
+    <p style="font-size:.85rem;color:var(--muted);margin-bottom:16px;">Ready to move forward?</p>
+    <a href="mailto:vasilop99kon@gmail.com" style="display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:14px 32px;border-radius:10px;font-weight:700;font-size:.95rem;transition:background .2s;" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">
+      ✉️ Email Konstantinos
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 Konstantinos Vasilopoulos &nbsp;·&nbsp; <a href="https://vasilakis99.github.io" style="color:var(--blue)">vasilakis99.github.io</a>
+</footer>
+
+</body>
+</html>
