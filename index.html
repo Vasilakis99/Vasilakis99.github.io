@@ -180,16 +180,24 @@
       display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; align-items: start;
     }
     .about-portrait {
-      width: 100%; aspect-ratio: 4/5; border-radius: 16px;
+      width: 100%; border-radius: 16px;
       background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 5rem; color: rgba(255,255,255,.15);
-      position: relative; overflow: hidden;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 48px 32px; gap: 20px; position: relative;
     }
-    .about-portrait::after {
-      content: 'KV'; font-size: 5rem; font-weight: 700;
-      color: rgba(255,255,255,.15); letter-spacing: -2px;
+    .cv-icon { font-size: 3rem; }
+    .cv-label { font-size: 1rem; font-weight: 600; color: rgba(255,255,255,.85); letter-spacing: .02em; }
+    .cv-sub { font-size: .8rem; color: rgba(255,255,255,.45); margin-top: -12px; }
+    .cv-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.12); color: #fff;
+      border: 1.5px solid rgba(255,255,255,.25);
+      padding: 12px 28px; border-radius: 8px;
+      font-size: .88rem; font-weight: 600;
+      transition: background .2s, border-color .2s;
+      margin-top: 8px;
     }
+    .cv-btn:hover { background: rgba(255,255,255,.2); border-color: rgba(255,255,255,.5); }
     .about-bio { font-size: .97rem; color: var(--muted); line-height: 1.8; margin-bottom: 28px; }
     .about-highlights {
       display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px;
@@ -321,7 +329,7 @@
       .hero-visual { display: none; }
       .hero-stats { grid-template-columns: repeat(3,1fr); }
       .about-grid { grid-template-columns: 1fr; }
-      .about-portrait { display: none; }
+      .about-portrait { padding: 32px 20px; }
       .projects-featured { grid-template-columns: 1fr; }
       .projects-secondary { grid-template-columns: repeat(2,1fr); }
       .skills-grid { grid-template-columns: repeat(2,1fr); }
@@ -428,7 +436,12 @@ df = pd.<span class="code-func">read_sql</span>(q, con)<br>
 <section id="about" class="section">
   <div class="container">
     <div class="about-grid">
-      <div class="about-portrait reveal"></div>
+      <div class="about-portrait reveal">
+        <div class="cv-icon">📄</div>
+        <div class="cv-label">Curriculum Vitae</div>
+        <div class="cv-sub">Konstantinos Vasilopoulos</div>
+        <a href="CV_Konstantinos_Vasilopoulos.docx" download class="cv-btn">⬇ Download CV</a>
+      </div>
       <div class="reveal">
         <p class="section-label">About me</p>
         <h2 class="section-title">Turning data into decisions</h2>
