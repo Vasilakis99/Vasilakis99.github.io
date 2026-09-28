@@ -139,12 +139,12 @@
     }
     .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
     .hero-stats {
-      display: grid; grid-template-columns: repeat(3,1fr);
-      gap: 16px; margin-top: 48px;
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 12px; margin-top: 48px;
     }
     .hero-stat {
       background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
-      border-radius: 10px; padding: 18px 16px; text-align: center;
+      border-radius: 10px; padding: 18px 10px; text-align: center;
     }
     .hero-stat-num { font-size: 1.7rem; font-weight: 700; color: #fff; }
     .hero-stat-label { font-size: .75rem; color: rgba(255,255,255,.5); margin-top: 2px; }
@@ -327,7 +327,7 @@
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; }
       .hero-visual { display: none; }
-      .hero-stats { grid-template-columns: repeat(3,1fr); }
+      .hero-stats { grid-template-columns: repeat(2,1fr); }
       .about-grid { grid-template-columns: 1fr; }
       .about-portrait { padding: 32px 20px; }
       .projects-featured { grid-template-columns: 1fr; }
@@ -346,7 +346,7 @@
       .projects-secondary { grid-template-columns: 1fr; }
       .skills-grid { grid-template-columns: 1fr; }
       .about-highlights { grid-template-columns: 1fr; }
-      .hero-stats { grid-template-columns: 1fr; gap: 10px; }
+      .hero-stats { grid-template-columns: repeat(2,1fr); gap: 10px; }
     }
   </style>
 </head>
@@ -390,12 +390,16 @@
             <div class="hero-stat-label">Years experience</div>
           </div>
           <div class="hero-stat">
+            <div class="hero-stat-num">BSc</div>
+            <div class="hero-stat-label">Applied Mathematics</div>
+          </div>
+          <div class="hero-stat">
             <div class="hero-stat-num">MSc</div>
             <div class="hero-stat-label">Applied Data Science</div>
           </div>
           <div class="hero-stat">
-            <div class="hero-stat-num">EU</div>
-            <div class="hero-stat-label">Work authorised</div>
+            <div class="hero-stat-num">MSc</div>
+            <div class="hero-stat-label">Sustainable Finance &amp; Investments</div>
           </div>
         </div>
       </div>
@@ -408,22 +412,12 @@
           </div>
           <div class="code-block">
 <span class="code-keyword">import</span> pandas <span class="code-keyword">as</span> pd<br>
-<span class="code-keyword">import</span> sqlite3<br>
 <br>
 <span class="code-comment"># Q3 abandonment spike: root cause</span><br>
-con = sqlite3.<span class="code-func">connect</span>(<span class="code-string">"transactions.db"</span>)<br>
+df = pd.<span class="code-func">read_csv</span>(<span class="code-string">"transactions.csv"</span>)<br>
+df.<span class="code-func">groupby</span>(<span class="code-string">"quarter"</span>)[<span class="code-string">"abandoned"</span>].<span class="code-func">mean</span>()<br>
 <br>
-q = <span class="code-string">"""<br>
-&nbsp;&nbsp;SELECT quarter,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;ROUND(100.0 * SUM(abandoned)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ COUNT(*), 1) AS rate<br>
-&nbsp;&nbsp;FROM transactions<br>
-&nbsp;&nbsp;GROUP BY quarter<br>
-"""</span><br>
-<br>
-df = pd.<span class="code-func">read_sql</span>(q, con)<br>
 <span class="code-comment"># Q3: 23.5% ↑ from 15% baseline</span><br>
-<span class="code-comment"># Root cause: shipping fee hike</span><br>
 <span class="code-comment"># Recovery: $370K / year ✓</span>
           </div>
         </div>
@@ -452,10 +446,7 @@ df = pd.<span class="code-func">read_sql</span>(q, con)<br>
           Currently at <strong>Shimano</strong>, I lead data cleansing activities for the Procurement department within a company-wide SAP S/4HANA migration, support the global B2B and retail websites through the data and management department, and deliver structured progress reports to IT stakeholders.
         </p>
         <p class="about-bio">
-          I hold an <strong>MSc in Applied Data Science</strong> from Utrecht University, where my thesis applied machine learning recommender systems to dementia care in collaboration with <em>Sports &amp; Memory</em>.
-        </p>
-        <p class="about-bio">
-          I am actively looking for a <strong>Data Analyst</strong> role where rigorous thinking and clear communication drive measurable business impact.
+          I hold an <strong>MSc in Applied Data Science</strong> from Utrecht University, where my thesis applied machine learning recommender systems to dementia care in collaboration with <em>Sports &amp; Memory</em>. I am currently also pursuing an <strong>MSc in Sustainable Finance &amp; Investments</strong> at Utrecht University.
         </p>
         <div class="about-highlights">
           <div class="highlight-item">
